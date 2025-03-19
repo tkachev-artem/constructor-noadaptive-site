@@ -2,12 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { navItems } from '../config';
+import Image from 'next/image';
+import { navItems, headerConfig } from '../config';
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  // Заглушка для количества товаров в корзине
-  const cartCount = 0;
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,7 +19,7 @@ const Header = () => {
       {/* Top Menu */}
       <div className="flex justify-center py-5">
         <div className="w-full max-w-[1320px]">
-          <nav className="flex justify-start items-center gap-5">
+          <nav className="flex justify-center items-center gap-5">
             {navItems.topMenu.map((item, index) => (
               <Link 
                 href={item.href} 
@@ -43,22 +42,22 @@ const Header = () => {
           <div className="h-10 w-10 relative">
             <Link href="/" aria-label="На главную">
               <div className="w-10 h-10 relative">
-                {/* Replace with actual logo */}
-                <div className="w-full h-full bg-black rounded-full flex items-center justify-center text-white text-xs">
-                  ЛОГО
+                <div className="w-full h-full flex items-center justify-center">
+                  <Image src={headerConfig.icons[0].href} alt={headerConfig.icons[0].alt} width={headerConfig.icons[0].width} height={headerConfig.icons[0].height} />
                 </div>
               </div>
             </Link>
           </div>
 
           {/* Search Bar */}
-          <div className="relative">
+          <div className="flex items-center gap-4">
+            
             <form onSubmit={handleSearch} className="flex items-center">
               <div className="h-10 w-[400px] border border-[#D6D6D6] bg-white rounded-full flex items-center justify-between">
                 <input
                   type="text"
                   placeholder="поиск по сайту"
-                  className="h-full px-5 py-2 rounded-full bg-transparent outline-none w-full text-[#D6D6D6] uppercase"
+                  className="h-full px-5 py-2 rounded-full bg-transparent outline-none w-full text-gray-500 uppercase"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -67,27 +66,26 @@ const Header = () => {
                   className="h-8 w-8 bg-[#FFCF03] rounded-full flex items-center justify-center mr-1"
                   aria-label="Поиск"
                 >
-                  <div className="w-5 h-5 flex items-center justify-center">
-                    {/* Replace with actual search icon */}
-                    <span className="text-xs">🔍</span>
+                  <div className="flex items-center justify-center">
+                    <Image src={headerConfig.icons[1].href} alt={headerConfig.icons[1].alt} width={headerConfig.icons[1].width} height={headerConfig.icons[1].height} />
                   </div>
                 </button>
               </div>
             </form>
           </div>
+          
 
           {/* Cart */}
+          <div>
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 relative flex items-center justify-center">
-              {/* Replace with actual cart icon */}
               <div className="w-10 h-10 rounded-full border border-[#D6D6D6] bg-white flex items-center justify-center">
-                <span className="text-xs">🛒</span>
+                <Image src={headerConfig.icons[2].href} alt={headerConfig.icons[2].alt} width={headerConfig.icons[2].width} height={headerConfig.icons[2].height} />
               </div>
             </div>
-            <div className="h-10 border border-[#D6D6D6] bg-white rounded-full px-5 flex items-center">
-              <span className="uppercase text-base">корзина ({cartCount})</span>
-            </div>
           </div>
+          </div>
+
         </div>
       </div>
 

@@ -1,7 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import ImagePlaceholder from './ImagePlaceholder';
+import Image from 'next/image';
 
 interface ProductCardProps {
   id: number;
@@ -12,10 +14,15 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ id, title, price, model, imageSrc }: ProductCardProps) => {
+  const [, setIsHovered] = useState(false);
+  
   const handleAddToCart = () => {
     console.log(`Added product ${id} to cart`);
     // Implementation of cart logic would go here
   };
+  
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
   
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -25,11 +32,13 @@ const ProductCard = ({ id, title, price, model, imageSrc }: ProductCardProps) =>
 
   return (
     <div 
-      className="bg-white rounded-[20px] p-4 flex flex-col relative w-[320px] h-[430px]"
+      className="bg-white rounded-[20px] p-4 flex flex-col relative w-[320px] h-full"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <Link href={`/product/${id}`} className="block flex-grow">
         <div className="w-full h-[280px] relative mb-4">
-          <div className="w-full h-full bg-gray-100 rounded-[10px] flex items-center justify-center">
+          <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
             <ImagePlaceholder
               src={imageSrc}
               alt={title}
@@ -40,7 +49,7 @@ const ProductCard = ({ id, title, price, model, imageSrc }: ProductCardProps) =>
         </div>
         
         <h3 className="text-xl font-normal mb-1 whitespace-pre-line">{title}</h3>
-        <p className="text-xs text-[#828282] mb-2">{model}</p>
+        <p className="text-xs text-[#828282] mb-4">{model}</p>
       </Link>
       
       <div className="flex justify-between items-center mt-auto">
@@ -57,7 +66,9 @@ const ProductCard = ({ id, title, price, model, imageSrc }: ProductCardProps) =>
         >
           <div className="relative w-6 h-6">
             {/* Shopping cart icon placeholder */}
-            <span className="text-xl">🛒</span>
+            <span className="text-xl">
+              <Image src="/icons/cart.svg" alt="cart" width={24} height={24} />
+            </span>
           </div>
         </button>
       </div>
