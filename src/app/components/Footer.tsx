@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#F3F3F3] py-10">
       <div className="flex flex-col items-center justify-center gap-5 max-w-[1440px] mx-auto">
-        {/* Contact information */}
+        {/* Контактная информация */}
         <div className="w-full max-w-[1320px] flex flex-wrap gap-5">
           <div className="border border-black rounded-full px-5 py-2.5 flex items-center">
             <span className="text-xl uppercase">{siteConfig.contactPhone}</span>
@@ -19,12 +19,12 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Social media and contact links */}
+        {/* Социальные сети и контактные ссылки */}
         <div className="w-full max-w-[1320px] flex flex-wrap justify-between gap-10 mt-5">
           <div className="flex flex-col gap-2.5">
             <h3 className="text-sm font-semibold">Связаться с нами</h3>
             <div className="flex gap-2.5">
-              {/* Social Media Icons (placeholders) */}
+              {/* Иконки социальных сетей */}
               <Link 
                 href="/contact/email" 
                 className="w-8 h-8 flex items-center justify-center bg-black rounded-full"
@@ -55,7 +55,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2.5">
             <h3 className="text-sm font-semibold">Мы в соцсетях</h3>
             <div className="flex gap-2.5">
-              {/* Social Media Icons (placeholders) */}
+              {/* Иконки социальных сетей */}
               <Link 
                 href="" 
                 className="w-8 h-8 flex items-center justify-center bg-black rounded-full"
@@ -89,7 +89,7 @@ const Footer = () => {
         </div>
         
         
-        {/* Copyright and legal */}
+        {/* Авторские права и юридическая информация */}
         <div className="w-full max-w-[1320px] mt-2 flex flex-col items-center justify-center">
           <p className="text-xs text-[#868686] mb-3">{siteConfig.copyright}</p>
           

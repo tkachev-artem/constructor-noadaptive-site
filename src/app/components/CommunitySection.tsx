@@ -11,7 +11,7 @@ interface CommunitySectionProps {
 const CommunitySection = ({ title, ctaLabel, ctaHref }: CommunitySectionProps) => {
   return (
     <section className="w-full max-w-[1440px] flex flex-col items-center gap-5">
-      {/* Title section */}
+      {/* Секция заголовка */}
       <div className="w-full max-w-[1320px] flex justify-between items-center h-[50px]">
         <h2 className="text-4xl uppercase font-normal">{title}</h2>
         
@@ -25,14 +25,14 @@ const CommunitySection = ({ title, ctaLabel, ctaHref }: CommunitySectionProps) =
         </Link>
       </div>
       
-      {/* Community content */}
+      {/* Содержимое сообщества */}
       <div className="w-full max-w-[1320px] flex justify-center gap-5 mt-5">
         {communityContent.map((item) => (
           <div 
             key={item.id}
             className="w-[650px] h-[365px] rounded-[20px] relative overflow-hidden"
           >
-            {/* Background image */}
+            {/* Фоновое изображение */}
             <div className="absolute inset-0 w-full h-full">
               <ImagePlaceholder
                 src={item.imageSrc || '/images/community-placeholder.jpg'}
@@ -42,7 +42,7 @@ const CommunitySection = ({ title, ctaLabel, ctaHref }: CommunitySectionProps) =
               />
             </div>
             
-            {/* User info */}
+            {/* Информация о пользователе */}
             <div className="absolute bottom-5 right-5 flex items-center">
               <div className="bg-white px-5 py-2.5 rounded-full">
                 <span className="text-base uppercase">{item.username}</span>

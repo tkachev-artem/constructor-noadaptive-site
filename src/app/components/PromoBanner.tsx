@@ -21,7 +21,7 @@ const PromoBanner = ({
       className="w-full max-w-[1320px] h-[445px] rounded-[20px] relative overflow-hidden"
       style={{ backgroundColor }}
     >
-      {/* Background Image */}
+      {/* Фоновое изображение */}
       <div className="absolute inset-0 w-full h-full">
         <ImagePlaceholder
           src={imageSrc}
@@ -32,7 +32,7 @@ const PromoBanner = ({
         />
       </div>
       
-      {/* Content */}
+      {/* Содержимое */}
       <div className="absolute p-10 flex flex-col h-full justify-center items-end w-full">
         <div className="flex flex-col items-center pr-[90px]">
           <h2 className="text-black text-4xl font-semibold whitespace-pre-line mb-8 text-center">

@@ -23,7 +23,7 @@ const MainBanner = ({
       className="w-[650px] h-[260px] rounded-[20px] relative overflow-hidden"
       style={{ backgroundColor }}
     >
-      {/* Background Image */}
+      {/* Фоновое изображение */}
       <div className="absolute inset-0 w-full h-full">
         <ImagePlaceholder
           src={imageSrc}
@@ -33,7 +33,7 @@ const MainBanner = ({
         />
       </div>
       
-      {/* Content */}
+      {/* Содержимое */}
       <div className="absolute p-6 flex flex-col h-full w-full">
         <div className="text-white text-sm mb-1">{subtitle}</div>
         

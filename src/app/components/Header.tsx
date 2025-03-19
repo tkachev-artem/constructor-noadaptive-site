@@ -10,13 +10,13 @@ const Header = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Implementation of search logic would go here
+    // Здесь будет реализована логика поиска
     console.log('Searching for:', searchQuery);
   };
 
   return (
     <header className="w-full bg-[#F3F3F3]">
-      {/* Top Menu */}
+      {/* Верхнее меню */}
       <div className="flex justify-center py-5">
         <div className="w-full max-w-[1320px]">
           <nav className="flex justify-center items-center gap-5">
@@ -35,10 +35,10 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Second Menu with Logo, Search and Cart */}
+      {/* Второе меню с логотипом, поиском и корзиной */}
       <div className="flex justify-center">
         <div className="w-full max-w-[1320px] flex justify-between items-center h-10">
-          {/* Logo */}
+          {/* Логотип */}
           <div className="h-10 w-10 relative">
             <Link href="/" aria-label="На главную">
               <div className="w-10 h-10 relative">
@@ -49,7 +49,7 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Search Bar */}
+          {/* Строка поиска */}
           <div className="flex items-center gap-4">
             
             <form onSubmit={handleSearch} className="flex items-center">
@@ -75,7 +75,7 @@ const Header = () => {
           </div>
           
 
-          {/* Cart */}
+          {/* Корзина */}
           <div>
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 relative flex items-center justify-center">
@@ -89,7 +89,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Category Menu */}
+      {/* Меню категорий */}
       <div className="flex justify-center mt-5">
         <div className="w-full max-w-[1320px] flex justify-center items-center gap-10 h-10">
           {navItems.categoryMenu.map((item, index) => (

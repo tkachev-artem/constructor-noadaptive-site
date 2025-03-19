@@ -18,7 +18,7 @@ const ProductCard = ({ id, title, price, model, imageSrc }: ProductCardProps) =>
   
   const handleAddToCart = () => {
     console.log(`Added product ${id} to cart`);
-    // Implementation of cart logic would go here
+    // Здесь будет реализация логики корзины
   };
   
   const handleMouseEnter = () => setIsHovered(true);
@@ -65,7 +65,6 @@ const ProductCard = ({ id, title, price, model, imageSrc }: ProductCardProps) =>
           tabIndex={0}
         >
           <div className="relative w-6 h-6">
-            {/* Shopping cart icon placeholder */}
             <span className="text-xl">
               <Image src="/icons/cart.svg" alt="cart" width={24} height={24} />
             </span>

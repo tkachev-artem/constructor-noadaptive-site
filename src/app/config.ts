@@ -1,4 +1,4 @@
-// Site configuration
+// Конфигурация сайта
 export const siteConfig = {
   contactPhone: "+7 (777)-77-77",
   workingHours: "9:00 — 22:00,",
@@ -14,7 +14,7 @@ export const headerConfig = {
   ],
 };
 
-// Navigation items
+// Элементы навигации
 export const navItems = {
   topMenu: [
     { label: "магазин", href: "/shop" },
@@ -37,7 +37,7 @@ export const navItems = {
   ],
 };
 
-// Banner data
+// Данные баннеров
 export const banners = {
   mainBanners: [
     {
@@ -74,7 +74,7 @@ export const banners = {
   },
 };
 
-// Products data
+// Данные товаров
 export const popularProducts = [
   {
     id: 1,
@@ -137,7 +137,7 @@ export const fairytaleProducts = [
   },
 ];
 
-// Community content
+// Контент сообщества
 export const communityContent = [
   {
     id: 1,

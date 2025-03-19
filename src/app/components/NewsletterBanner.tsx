@@ -21,7 +21,7 @@ const NewsletterBanner = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Subscribing with email:', email);
-    // Implementation of newsletter subscription logic would go here
+    // Здесь будет реализована логика подписки на рассылку
     setEmail('');
   };
 
@@ -40,7 +40,7 @@ const NewsletterBanner = ({
       className="w-full max-w-[1320px] h-[335px] rounded-[20px] relative overflow-hidden"
       style={{ backgroundColor }}
     >
-      {/* Background Image */}
+      {/* Фоновое изображение */}
       <div className="absolute inset-0 w-full h-full">
         <ImagePlaceholder
           src={imageSrc}
@@ -51,7 +51,7 @@ const NewsletterBanner = ({
         />
       </div>
       
-      {/* Content */}
+      {/* Содержимое */}
       <div className="absolute p-10 flex flex-col h-full justify-center items-start w-full">
         <div className="flex flex-col items-center pl-[90px]">
           <h2 className="text-white text-4xl font-semibold whitespace-pre-line mb-8 text-center">

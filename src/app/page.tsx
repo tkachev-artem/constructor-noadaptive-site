@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
       
       <main className="flex-grow">
-        {/* Main Banners Section */}
+        {/* Секция основных баннеров */}
         <section className="w-full max-w-[1440px] mx-auto flex justify-center items-end gap-5 h-[260px] mt-5">
           {banners.mainBanners.map((banner) => (
             <MainBanner
@@ -28,12 +28,12 @@ export default function Home() {
           ))}
         </section>
         
-        {/* Popular Products Section */}
+        {/* Секция популярных товаров */}
         <section className="w-full max-w-[1440px] mx-auto mt-10">
           <ProductGrid products={popularProducts} />
         </section>
         
-        {/* Pink Banner */}
+        {/* Розовый баннер */}
         <section className="w-full max-w-[1440px] mx-auto flex justify-center items-center h-[445px] mt-10">
           <PromoBanner
             title={banners.pinkBanner.title}
@@ -44,7 +44,7 @@ export default function Home() {
           />
         </section>
         
-        {/* Community Section */}
+        {/* Секция сообщества */}
         <section className="w-full max-w-[1440px] mx-auto mt-10">
           <CommunitySection
             title="#НАШЕКОМЬЮНИТИ"
@@ -53,7 +53,7 @@ export default function Home() {
           />
         </section>
         
-        {/* Fairytale Products Section */}
+        {/* Секция сказочных наборов */}
         <section className="w-full max-w-[1440px] mx-auto mt-10">
           <div className="w-full max-w-[1320px] mx-auto">
             <div className="flex justify-between items-center mb-5">
@@ -69,7 +69,7 @@ export default function Home() {
           <ProductGrid products={fairytaleProducts} />
         </section>
         
-        {/* Newsletter Banner */}
+        {/* Баннер подписки на рассылку */}
         <section className="w-full max-w-[1440px] mx-auto flex justify-center items-center h-[335px] mt-10">
           <NewsletterBanner
             title={banners.newsletterBanner.title}
