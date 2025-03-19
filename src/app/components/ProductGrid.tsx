@@ -1,4 +1,5 @@
 import ProductCard from './ProductCard';
+import Link from 'next/link';
 
 interface Product {
   id: number;
@@ -33,7 +34,18 @@ const ProductGrid = ({
         <div className="w-full max-w-[1320px] flex justify-between items-center h-[50px] mb-5">
           <h2 className="text-4xl uppercase font-normal">{title}</h2>
           
-          {ctaLabel && (
+          {ctaLabel && ctaHref && (
+            <Link 
+              href={ctaHref}
+              className="h-[50px] bg-[#FFCF03] rounded-full px-8 flex items-center justify-center text-2xl"
+              tabIndex={0}
+              aria-label={ctaLabel}
+            >
+              {ctaLabel}
+            </Link>
+          )}
+          
+          {ctaLabel && !ctaHref && onCtaClick && (
             <button 
               onClick={onCtaClick}
               className="h-[50px] bg-[#FFCF03] rounded-full px-8 flex items-center justify-center text-2xl"

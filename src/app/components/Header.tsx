@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { navItems, headerConfig } from '../config';
+import { navItems } from '../config';
 
 const Header = () => {
-  const [cartCount, setCartCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
+  // Заглушка для количества товаров в корзине
+  const cartCount = 0;
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ const Header = () => {
       {/* Top Menu */}
       <div className="flex justify-center py-5">
         <div className="w-full max-w-[1320px]">
-          <nav className="flex justify-center items-center gap-5">
+          <nav className="flex justify-start items-center gap-5">
             {navItems.topMenu.map((item, index) => (
               <Link 
                 href={item.href} 
@@ -43,16 +43,16 @@ const Header = () => {
           <div className="h-10 w-10 relative">
             <Link href="/" aria-label="На главную">
               <div className="w-10 h-10 relative">
-                <div className="w-full h-full flex items-center justify-center">
-                  <Image src={headerConfig.icons[0].href} alt={headerConfig.icons[0].alt} width={headerConfig.icons[0].width} height={headerConfig.icons[0].height} />
+                {/* Replace with actual logo */}
+                <div className="w-full h-full bg-black rounded-full flex items-center justify-center text-white text-xs">
+                  ЛОГО
                 </div>
               </div>
             </Link>
           </div>
 
           {/* Search Bar */}
-          <div className="flex items-center gap-4">
-            
+          <div className="relative">
             <form onSubmit={handleSearch} className="flex items-center">
               <div className="h-10 w-[400px] border border-[#D6D6D6] bg-white rounded-full flex items-center justify-between">
                 <input
@@ -67,26 +67,27 @@ const Header = () => {
                   className="h-8 w-8 bg-[#FFCF03] rounded-full flex items-center justify-center mr-1"
                   aria-label="Поиск"
                 >
-                  <div className="flex items-center justify-center">
-                    <Image src={headerConfig.icons[1].href} alt={headerConfig.icons[1].alt} width={headerConfig.icons[1].width} height={headerConfig.icons[1].height} />
+                  <div className="w-5 h-5 flex items-center justify-center">
+                    {/* Replace with actual search icon */}
+                    <span className="text-xs">🔍</span>
                   </div>
                 </button>
               </div>
             </form>
           </div>
-          
 
           {/* Cart */}
-          <div>
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 relative flex items-center justify-center">
+              {/* Replace with actual cart icon */}
               <div className="w-10 h-10 rounded-full border border-[#D6D6D6] bg-white flex items-center justify-center">
-                <Image src={headerConfig.icons[2].href} alt={headerConfig.icons[2].alt} width={headerConfig.icons[2].width} height={headerConfig.icons[2].height} />
+                <span className="text-xs">🛒</span>
               </div>
             </div>
+            <div className="h-10 border border-[#D6D6D6] bg-white rounded-full px-5 flex items-center">
+              <span className="uppercase text-base">корзина ({cartCount})</span>
+            </div>
           </div>
-          </div>
-
         </div>
       </div>
 
